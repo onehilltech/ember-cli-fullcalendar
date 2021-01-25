@@ -7,6 +7,10 @@ import { getWithDefault } from '@ember/object';
 
 function noOp () {}
 
+function identity (value) {
+  return value => value;
+}
+
 export default class DayGridCalendarComponent extends CalendarComponent {
   // Toolbar
   get headerToolbar () {
@@ -134,6 +138,31 @@ export default class DayGridCalendarComponent extends CalendarComponent {
     return getWithDefault (this.args, 'weekNumberFormat',  { week: 'narrow' });
   }
 
+  // interactions
+  get selectable () {
+    return getWithDefault (this.args, 'selectable',  false);
+  }
+
+  get selectMirror () {
+    return getWithDefault (this.args, 'selectMirror',  false);
+  }
+
+  get unselectAuto () {
+    return getWithDefault (this.args, 'unselectAuto',  true);
+  }
+
+  get unselectCancel () {
+    return getWithDefault (this.args, 'unselectCancel',  '');
+  }
+
+  get selectOverlap () {
+    return getWithDefault (this.args, 'selectOverlap',  true);
+  }
+
+  get selectConstraint () {
+    return this.args.selectConstraint;
+  }
+
   doPrepareOptions (options) {
     options = super.doPrepareOptions (options);
     options.plugins.push (dayGridPlugin, interactionPlugin);
@@ -169,6 +198,13 @@ export default class DayGridCalendarComponent extends CalendarComponent {
       weekNumberCalculation: this.weekNumberCalculation,
       weekText: this.weekNumbers,
       weekNumberFormat: this.weekNumberFormat,
+
+      selectable: this.selectable,
+      selectMirror: this.selectMirror,
+      unselectAuto: this.unselectAuto,
+      unselectCancel: this.unselectCancel,
+      selectOverlap: this.selectOverlap,
+      selectConstraint: this.selectConstraint,
 
       dateClick: this.click.bind (this)
     })
