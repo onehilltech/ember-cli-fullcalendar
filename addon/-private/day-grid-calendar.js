@@ -62,6 +62,14 @@ export default class DayGridCalendarComponent extends CalendarComponent {
     return getWithDefault (this.args, 'dayHeaders', true);
   }
 
+  get dayHeaderClassNames () {
+    return this.args.dayHeaderClassNames;
+  }
+
+  get dayHeaderContent () {
+    return this.args.dayHeaderContent;
+  }
+
   get dayHeaderFormat () {
     return this.args.dayHeaderFormat;
   }
@@ -150,6 +158,9 @@ export default class DayGridCalendarComponent extends CalendarComponent {
       hiddenDays: this.hiddenDays,
       dayHeaders: this.dayHeaders,
       dayHeaderFormat: this.dayHeaderFormat,
+      dayHeaderClassNames: this.dayHeaderClassNames,
+      dayHeaderContent: this.dayHeaderContent,
+
       dayMinWidth: this.dayMinWidth,
       dayCellClassNames: this.dayCellClassNames,
       dayCellContent: this.dayCellContent,
