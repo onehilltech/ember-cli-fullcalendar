@@ -70,6 +70,14 @@ export default class DayGridCalendarComponent extends CalendarComponent {
     return this.args.dayMinWidth;
   }
 
+  get dayCellClassNames () {
+    return this.args.dayCellClassNames;
+  }
+
+  get dayCellContent () {
+    return this.args.dayCellContent;
+  }
+
   // Sizing
 
   get height () {
@@ -143,6 +151,8 @@ export default class DayGridCalendarComponent extends CalendarComponent {
       dayHeaders: this.dayHeaders,
       dayHeaderFormat: this.dayHeaderFormat,
       dayMinWidth: this.dayMinWidth,
+      dayCellClassNames: this.dayCellClassNames,
+      dayCellContent: this.dayCellContent,
 
       weekNumbers: this.weekNumbers,
       weekNumberCalculation: this.weekNumberCalculation,
