@@ -1,0 +1,1 @@
+export { default } from '@onehilltech/ember-cli-fullcalendar/components/fc-month';
