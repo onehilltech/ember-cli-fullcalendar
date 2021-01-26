@@ -199,12 +199,12 @@ export default class DayGridCalendarComponent extends CalendarComponent {
       weekText: this.weekNumbers,
       weekNumberFormat: this.weekNumberFormat,
 
-      selectable: this.selectable,
-      selectMirror: this.selectMirror,
-      unselectAuto: this.unselectAuto,
-      unselectCancel: this.unselectCancel,
-      selectOverlap: this.selectOverlap,
-      selectConstraint: this.selectConstraint,
+      //selectable: this.selectable,
+      //selectMirror: this.selectMirror,
+      //unselectAuto: this.unselectAuto,
+      //unselectCancel: this.unselectCancel,
+      //selectOverlap: this.selectOverlap,
+      //selectConstraint: this.selectConstraint,
 
       dateClick: this.click.bind (this)
     })
