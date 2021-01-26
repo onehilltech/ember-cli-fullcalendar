@@ -163,6 +163,10 @@ export default class DayGridCalendarComponent extends CalendarComponent {
     return this.args.selectConstraint;
   }
 
+  get firstDay () {
+    return getWithDefault (this.args, 'firstDay', 0);
+  }
+
   doPrepareOptions (options) {
     options = super.doPrepareOptions (options);
     options.plugins.push (dayGridPlugin, interactionPlugin);
@@ -198,6 +202,8 @@ export default class DayGridCalendarComponent extends CalendarComponent {
       weekNumberCalculation: this.weekNumberCalculation,
       weekText: this.weekNumbers,
       weekNumberFormat: this.weekNumberFormat,
+
+      firstDay: this.firstDay,
 
       //selectable: this.selectable,
       //selectMirror: this.selectMirror,
