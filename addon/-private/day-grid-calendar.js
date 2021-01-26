@@ -205,6 +205,10 @@ export default class DayGridCalendarComponent extends CalendarComponent {
       //unselectCancel: this.unselectCancel,
       //selectOverlap: this.selectOverlap,
       //selectConstraint: this.selectConstraint,
+      dayCellDidMount: this.dayCellDidMount.bind (this),
+      dayCellWillUnmount: this.dayCellWillUnmount.bind (this),
+      slotLabelDidMount: this.slotLabelDidMount.bind (this),
+      slotLabelWillUnmount: this.slotLabelWillUnmount.bind (this),
       slotLaneDidMount: this.slotLaneDidMount.bind (this),
       slotLaneWillUnmount: this.slotLaneWillUnmount.bind (this),
 
@@ -224,6 +228,22 @@ export default class DayGridCalendarComponent extends CalendarComponent {
 
   unselect () {
     (this.args.unselect || noOp) (...arguments);
+  }
+
+  dayCellDidMount ( ) {
+    (this.args.dayCellDidMount || noOp) (...arguments);
+  }
+
+  dayCellWillUnmount () {
+    (this.args.dayCellWillUnmount || noOp) (...arguments);
+  }
+
+  slotLabelDidMount () {
+    (this.args.slotLabelDidMount || noOp) (...arguments);
+  }
+
+  slotLabelWillUnmount () {
+    (this.args.slotLabelWillUnmount || noOp) (...arguments);
   }
 
   slotLaneDidMount ( ) {
