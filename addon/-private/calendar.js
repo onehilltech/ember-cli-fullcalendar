@@ -26,4 +26,49 @@ export default class CalendarComponent extends Component {
 
     this._calendar.destroy ();
   }
+
+  @action
+  next (element, [next]) {
+    if (next) {
+      this._calendar.next ();
+    }
+  }
+
+  @action
+  prev (element, [prev]) {
+    if (prev) {
+      this._calendar.prev ();
+    }
+  }
+
+  @action
+  nextYear (element, nextYear) {
+    if (nextYear) {
+      this._calendar.nextYear ();
+    }
+  }
+
+  @action
+  prevYear (element, prevYear) {
+    if (prevYear) {
+      this._calendar.prevYear ();
+    }
+  }
+
+  @action
+  today (element, [today]) {
+    if (today) {
+      this._calendar.today ();
+    }
+  }
+
+  @action
+  gotoDate (element, [date]) {
+    this._calendar.gotoDate (date);
+  }
+
+  @action
+  incrementDate (element, [duration]) {
+    this._calendar.incrementDate (duration);
+  }
 }

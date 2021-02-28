@@ -1,3 +1,12 @@
-<div {{did-insert this.didInsert}} ...attributes>
+<div ...attributes
+  {{did-insert this.didInsert}}
+  {{did-update this.next @next}}
+  {{did-update this.prev @prev}}
+  {{did-update this.nextYear @nextYear}}
+  {{did-update this.prevYear @prevYear}}
+  {{did-update this.today @today}}
+  {{did-update this.gotoDate @gotoDate}}
+  {{did-update this.incrementDate @incrementDate}}
+>
 
 </div>
