@@ -45,10 +45,10 @@ export default class DayGridCalendarComponent extends CalendarComponent {
 
   get buttonIcons () {
     return getWithDefault (this.args, 'buttonIcons', {
-      prev: 'left-single-arrow',
-      next: 'right-single-arrow',
-      prevYear: 'left-double-arrow',
-      nextYear: 'right-double-arrow'
+      prev: 'chevron-left',
+      next: 'chevron-right',
+      prevYear: 'chevrons-left',
+      nextYear: 'chevrons-right'
     });
   }
 
