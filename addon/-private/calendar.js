@@ -79,7 +79,7 @@ export default class CalendarComponent extends Component {
     const { startDate, endDate } = this.args;
 
     if (isPresent (startDate) || isPresent (endDate)) {
-      return { startDate, endDate }
+      return { start: startDate, end: endDate }
     }
     else {
       return undefined;
