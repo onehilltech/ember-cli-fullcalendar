@@ -1,6 +1,7 @@
 import Component from "@glimmer/component";
 import { action } from '@ember/object';
 import { Calendar } from '@fullcalendar/core';
+import { isPresent } from '@ember/utils';
 
 export default class CalendarComponent extends Component {
   _calendar;
@@ -18,7 +19,9 @@ export default class CalendarComponent extends Component {
    * @param options
    */
   doPrepareOptions (options) {
-    return options;
+    return Object.assign (options,  {
+      validRange: this.validRange
+    })
   }
 
   willDestroy () {
@@ -70,5 +73,16 @@ export default class CalendarComponent extends Component {
   @action
   incrementDate (element, [duration]) {
     this._calendar.incrementDate (duration);
+  }
+
+  get validRange () {
+    const { startDate, endDate } = this.args;
+
+    if (isPresent (startDate) || isPresent (endDate)) {
+      return { startDate, endDate }
+    }
+    else {
+      return undefined;
+    }
   }
 }
